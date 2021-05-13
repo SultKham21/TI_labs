@@ -38,7 +38,7 @@ namespace TI
         private static String CipherText(String str, String key)
         {
             String cipher_text = "";
-
+            str= str.Replace(" ", "");
             for (int i = 0; i < str.Length; i++)
             {
                 int x = (str[i] + key[i]) % 26;
@@ -51,7 +51,7 @@ namespace TI
                 }
                 else
                 {
-                    cipher_text += (char) (x - 2);
+                    cipher_text += (char) (x);
                 }
             }
 
@@ -74,7 +74,7 @@ namespace TI
                 }
                 else
                 {
-                    orig_text += (char) (x + 2);
+                    orig_text += (char) (x);
                 }
             }
 
