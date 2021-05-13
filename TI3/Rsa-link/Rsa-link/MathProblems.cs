@@ -135,34 +135,6 @@ namespace Rsa_link
 
         }
 
-        /*
-        public static BigInteger Powmod_Big( BigInteger a, BigInteger b, BigInteger p)
-        {
-
-            BigInteger res = 1;
-            while (b != 0)
-            {
-                if ((b & 1) != 0)
-                {
-                    res = (int)(res * 1 * a % p);
-                    b--;
-
-                }
-                else
-                {
-                    a = (int)(a * 1 * a % p);
-                    b >>= 1;
-                }
-            }
-
-            return res;
-
-
-        }
-        */
-
-
-        
         public static int GetNOD(int val1, int val2)
         {
             while ((val1 != 0) && (val2 != 0))

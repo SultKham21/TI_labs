@@ -121,5 +121,15 @@ namespace Rsa_link
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

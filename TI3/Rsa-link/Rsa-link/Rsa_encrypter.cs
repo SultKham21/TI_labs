@@ -88,10 +88,14 @@ namespace Rsa_link
 
                byte [] tmp = new byte[4048];
                 FileStream f = new FileStream(sign_path, FileMode.Open, FileAccess.Read);
+                long nan = 0;
                 int ByteRead = f.Read(tmp, 0, tmp.Length);
                 f.Close();
+                long lip;
                 byte[] numb = new byte[ByteRead];
+                string strn = "";
                 Array.Copy(tmp, numb, ByteRead);
+                lip = RsaCheckHash(strn, nan);
                 BigInteger OldHash = new BigInteger(numb);
 
                 OldHash = this.DecryptNumber(OldHash);
@@ -130,6 +134,11 @@ namespace Rsa_link
         public BigInteger D
         {
             get { return d; }
+        }
+
+        private static long RsaCheckHash(string str, long n)
+        {
+            return str.Aggregate<char, long>(100, (current, t) => (current + t) * (current + t % n));
         }
 
         public bool GenerateKeys(int len)
