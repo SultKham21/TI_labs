@@ -108,25 +108,25 @@ namespace Rsa_link
         {
             if (!KeysExist)
             {
-                label7.Text = "Сгенерируйте ключи для шифрования";
+                label7.Text = "please, generate key";
                 return;
             }
             if (TestedFile.Text == "")
             {
-                label7.Text = "Файл не указан";
+                label7.Text = "file not found!";
                 return;
             }
 
 
-            label7.Text = "Cоздание подписи...";
+            label7.Text = "Creating...";
             if (!rsa_enc.CreateSign(TestedFile.Text, SignPath.Text))
             {
                 MessageBox.Show("Error!");
             }
 
-            label7.Text = "Подпись создана.";
+            label7.Text = "Created.";
 
-            //textBox1.Text = b.ToString();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -141,23 +141,23 @@ namespace Rsa_link
         {
             if (!KeysExist)
             {
-                label7.Text = "Сгенерируйте ключи для шифрования";
+                label7.Text = "Generate for  encrypt";
                 return;
             }
             if (TestedFile.Text == "")
             {
-                label7.Text = "Файл не указан";
+                label7.Text = "File not found";
                 return;
             }
             if (rsa_enc.CheckSign(TestedFile.Text, SignPath.Text))
             {
-                MessageBox.Show("Подпись корректна");
-                label7.Text = "Подпись корректна";
+                MessageBox.Show("Sign right");
+                label7.Text = "Sign right";
             }
             else
             {
-                MessageBox.Show("Подпись не та");
-                label7.Text = "Подпись некорректна";
+                MessageBox.Show("Sign error");
+                label7.Text = "Sign error";
             }
         }
 
