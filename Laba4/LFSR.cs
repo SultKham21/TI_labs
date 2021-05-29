@@ -50,12 +50,13 @@ namespace lab_4
             }
         }
 
-        //x^24 + x^2 + 1
+        //x^25+x^3+1
         public static ulong Key()
         {
-            ulong bit_24 = (register >> 23) & 1;
-            ulong bit_1 = (register >> 1) & 1;
-            ulong xor_bits = bit_24 ^ bit_1;
+            ulong bit_25 = (register >> 24) & 1;
+            ulong bit_1 = (register >> 2) & 1;
+
+            ulong xor_bits = bit_25 ^ bit_1;
 
             register = (xor_bits << 31) | (register >> 1);
             return register & 1;
